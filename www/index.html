@@ -61,6 +61,26 @@
         showResults(results)
       })
     }
+    function searchLevellt(){
+      let level= parseInt($("#level").val());
+      let TestDataClass=ncmb.DataStore(db);
+      TestDataClass
+      .lessThan("level",level)
+      .fetchAll()
+      .then(function(results){
+        showResults(results)
+      })
+    }
+    function searchLevelgt(){
+      let level= parseInt($("#level").val());
+      let TestDataClass=ncmb.DataStore(db);
+      TestDataClass
+      .greaterThan("level",level)
+      .fetchAll()
+      .then(function(results){
+        showResults(results)
+      })
+    }
   </script>
 </head>
 
@@ -78,9 +98,9 @@
     <button class="btn" onclick="fetchAll()">Fetch All</button>
     <button class="btn" onclick="searchName()">Name</button> 
     <br>
-    <button class="btn" onclick="searchLevel()">level&lt </button> 
+    <button class="btn" onclick="searchLevellt()">level&lt </button> 
     <button class="btn" onclick="searchLevel()">level</button> 
-     <button class="btn" onclick="searchLevel()">level&gt </button> 
+     <button class="btn" onclick="searchLevelgt()">level&gt </button> 
   </div>
   
  
