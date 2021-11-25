@@ -50,6 +50,17 @@
         showResults(results)
       })
     }
+
+     function searchLevel(){
+      let level= parseInt($("#level").val());
+      let TestDataClass=ncmb.DataStore(db);
+      TestDataClass
+      .equalTo("level",level)
+      .fetchAll()
+      .then(function(results){
+        showResults(results)
+      })
+    }
   </script>
 </head>
 
@@ -66,7 +77,7 @@
   <div id="button">
     <button class="btn" onclick="fetchAll()">Fetch All</button>
     <button class="btn" onclick="searchName()">Name</button> 
-    <button class="btn" onclick="searchLevel()">Level</button> 
+    <button class="btn" onclick="searchLevel()">level</button> 
   </div>
  
   <div id="message">message area</div>
